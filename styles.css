@@ -202,6 +202,11 @@ header nav a{
     background-color: #3f2525;
   }
 }
+@media screen and (max-width: 400px) {
+  #intro .content .des{
+    font-size: 14px;
+  }
+}
 .tab{
   position: fixed;
   inset: 0 0 0 0;
