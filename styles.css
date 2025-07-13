@@ -205,6 +205,7 @@ header nav a{
 @media screen and (max-width: 400px) {
   #intro .content .des{
     font-size: 14px;
+    color: #008080
   }
 }
 .tab{
