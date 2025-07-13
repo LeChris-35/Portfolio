@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+body{
+  background: #002147;
+  color: #eee;
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+header{
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  margin-top: 10px;
+  text-align: center;
+}
+header nav a{
+  margin: 0 30px;
+  color: #eee;
+}
+.tab{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.tab .container{
+  width: 1140px;
+  max-width: 100%;
+  height: 100%;
+  position: relative;
+  padding-top: 50px;
+  margin: auto;
+  box-sizing: border-box;
+}
+#intro{
+  background: #16222d;
+}
+#intro .avatar{
+  text-align: right;
+  height: 100%;
+}
+#intro .avatar img{
+  height: 100%;
+  filter: saturate(0.8);
+}
+#intro .content{
+  position: absolute;
+  top: 50%;
+  width: 500px;
+  max-width: 80%;
+  left: 50px;
+  transform: translateY(-50%);
+}
+#intro .content .name,
+#intro .content .job{
+  font-size: 3em;
+  font-family: "Anton", sans-serif;
+  line-height: 1em;
+}
+#intro .content .job span{
+  font-family: "Anton", sans-serif;
+}
+.text-gradient{
+  background-image: linear-gradient(
+    to right, #e4454a, #ca3ea7
+  );
+  display: inline-block;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+#intro .content .des{
+  margin-top: 1.2em;
+  width: 70%;
+}
+#intro .content a{
+  margin-top: 1.2em;
+}
+#intro .content i{
+  position: absolute;
+  font-size: 10em;
+  color: #293b4c;
+  top: -90px;
+  right: -50px;
+}
+#skills{
+  background-image: linear-gradient(
+    45deg, #3a2530, #171514, #412726
+  );
+  background-size: cover;
+}
+#skills .list{
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 50px;
+  box-sizing: border-box;
+  gap: 0;
+}
+#skills .list .item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+}
+#skills .list .item:nth-child(odd){
+  background-color: #3f2525;
+}
+#skills .list .item i{
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #ca3ea7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px #000;
+}
+#skill .list .item .name{
+  font-size: 1.5em;
+  margin-top: 0.7em;
+}
+#skills .list .des{
+  font-size: small;
+  opacity: 0.8;
+}
+#contacts{
+  background-color: #242330;
+}
+#contacts .thank{
+  font-size: 5em;
+  text-align: center;
+  font-weight: bold;
+}
+#contacts .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+#contacts .des{
+  width: 500px;
+  max-width: 80%;
+  text-align: center;
+}
+#contacts .list{
+  text-align: center;
+}
+#contacts .list .item{
+  display: inline-block;
+  margin: 10px 30px;
+}
+@media screen and (max-width: 991px) {
+  #intro .avatar img{
+    transform: translateX(70px);
+  }
+}
+@media screen and (max-width: 767px) {
+  body{
+    font-size: 10px;
+  }
+  header nav a{
+    margin: 10px;
+  }
+  #intro .avatar img{
+    transform: none;
+  }
+  #intro .content{
+    left: 20px;
+  }
+  #intro .content .name{
+    font-size: 4em;
+  }
+  #intro .content .job{
+    font-size: 4em;
+  }
+  #intro .content i{
+    position: unset;
+  }
+  #skills .list{
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+  } 
+  #skills .list .item:nth-child(odd){
+    background-color: unset;
+  }
+  #skills .list .item:nth-child(2),
+  #skills .list .item:nth-child(3n){
+    background-color: #3f2525;
+  }
+}
+.tab{
+  position: fixed;
+  inset: 0 0 0 0;
+  z-index: 1;
+}
+#intro{
+  z-index: 2;
+}
+.tab.active{
+  --x: 50%;
+  --y: 50%;
+  clip-path: circle(
+    0 at var(--x) var(--y)
+  );
+  animation: showTab 1s ease-in-out 1 forwards;
+}
+@keyframes showTab{
+  to{
+    clip-path: circle(
+      200% at 50% 50%
+    );
+  }
+}
